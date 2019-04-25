@@ -19,6 +19,30 @@ var api = new ParseServer({
   serverURL: process.env.SERVER_URL || 'http://localhost:1337/parse',  // Don't forget to change to https if needed
   liveQuery: {
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
+  },  
+  appName: process.env.APPNAME_KEY || '',
+  publicServerURL: process.env.PUBLICSERVERURL_KEY || '',
+  /*emailAdapter: new SimpleMailgunAdapter({
+    apiKey: process.env.EMAIL_API_KEY || '',
+    domain: process.env.EMAIL_DOMAIN_KEY || '',
+    fromAddress: process.env.FROM_ADRESS_KEY || '',
+  }),*/
+  emailAdapter: {
+    module: '@parse/simple-mailgun-adapter',
+    options: {
+    apiKey: process.env.EMAIL_API_KEY || '',
+    domain: process.env.EMAIL_DOMAIN_KEY || '',
+    fromAddress: process.env.FROM_ADRESS_KEY || '',
+    }
+  },
+  push: {
+        ios: {
+            pfx: "Certificats.p12", // the path and filename to the .p12 file you exported earlier. 
+            cert: "", // If not using the .p12 format, the path to the certificate PEM to load from disk
+            bundleId: process.env.BUNDLEID_KEY || '', // The bundle identifier associated with your app
+            key: "", // If not using the .p12 format, the path to the private key PEM to load from disk
+            production: false // Specifies which environment to connect to: Production (if true) or Sandbox
+             }
   }
 });
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
