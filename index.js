@@ -22,19 +22,6 @@ var api = new ParseServer({
   },  
   appName: process.env.APPNAME_KEY || '',
   publicServerURL: process.env.PUBLICSERVERURL_KEY || '',
-  /*emailAdapter: new SimpleMailgunAdapter({
-    apiKey: process.env.EMAIL_API_KEY || '',
-    domain: process.env.EMAIL_DOMAIN_KEY || '',
-    fromAddress: process.env.FROM_ADRESS_KEY || '',
-  }),*/
-  emailAdapter: {
-    module: '@parse/simple-mailgun-adapter',
-    options: {
-    apiKey: process.env.EMAIL_API_KEY || '',
-    domain: process.env.EMAIL_DOMAIN_KEY || '',
-    fromAddress: process.env.FROM_ADRESS_KEY || '',
-    }
-  },
   push: {
         ios: {
             pfx: "Certificats.p12", // the path and filename to the .p12 file you exported earlier. 
