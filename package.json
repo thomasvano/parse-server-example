@@ -15,7 +15,7 @@
     "parse-server": "*"
   },
   "scripts": {
-    "start": "node index.js --scripts-prepend-node-path"
+    "start": "node index.js"
   },
   "engines": {
     "node": "8"
