@@ -10,7 +10,6 @@
   "license": "MIT",
   "dependencies": {
     "express": "~4.11.x",
-    "bcryptjs": "2.4.3",
     "node-pre-gyp": "0.14.0",
     "parse": "~1.8.0",
     "parse-server": "*"
