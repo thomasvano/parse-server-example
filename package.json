@@ -12,7 +12,7 @@
     "express": "~4.11.x",
     "node-pre-gyp": "0.14.0",
     "parse": "~1.8.0",
-    "parse-server": "*"
+    "parse-server": "4.0.0"
   },
   "scripts": {
     "start": "node index.js"
